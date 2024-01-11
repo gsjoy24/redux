@@ -1,6 +1,7 @@
-const logger = (state) => (next) => (action) => {
-	console.log(state);
-	console.log(next);
-	console.log(action);
+const Logger = (state) => (next) => (action) => {
+	console.log('current state', state.getState());
+	console.log('action', action);
+	next(action);
+	console.log('next state', state.getState());
 };
-export default logger;
+export default Logger;
